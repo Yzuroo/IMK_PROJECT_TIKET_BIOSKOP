@@ -1,33 +1,146 @@
-<!-- Header -->
-<header>
-  <h1>BioskopYuk 🎬</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Film</a>
-    <a href="#">Pesanan</a>
-    <a href="#">Kontak</a>
-  </nav>
-</header>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiketBio - Pemesanan Tiket Bioskop Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <span>TiketBio</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="#film">Film</a></li>
+                <li><a href="#promosi">Promosi</a></li>
+                <li><a href="pesanan.html">Pesanan Saya</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="login-btn" onclick="toggleLoginModal()">Login</button>
+                <button class="register-btn" onclick="toggleRegisterModal()">Daftar</button>
+            </div>
+        </div>
+    </nav>
 
-<!-- Banner -->
-<section class="banner">
-  <h2>Film Terbaru Minggu Ini</h2>
-  <img src="poster.jpg" alt="Poster Film">
-</section>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary">Masuk</button>
+            </form>
+        </div>
+    </div>
 
-<!-- Daftar Film -->
-<section class="film-list">
-  <div class="film-card">
-    <img src="avengers.jpg" alt="Avengers">
-    <h3>Avengers</h3>
-    <p>Action | 19:00</p>
-    <button>Pesan Tiket</button>
-  </div>
-  <div class="film-card">
-    <img src="batman.jpg" alt="Batman">
-    <h3>Batman</h3>
-    <p>Action | 21:00</p>
-    <button>Pesan Tiket</button>
-  </div>
-</section>
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleRegisterModal()">&times;</span>
+            <h2>Daftar Akun</h2>
+            <form id="registerForm">
+                <input type="text" placeholder="Nama Lengkap" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Konfirmasi Password" required>
+                <button type="submit" class="btn-primary">Daftar</button>
+            </form>
+        </div>
+    </div>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pesan Tiket Bioskop Anda</h1>
+            <p>Nikmati pengalaman menonton film terbaik</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-group">
+                <select id="kotaFilter" onchange="filterFilm()">
+                    <option value="">Semua Kota</option>
+                    <option value="jakarta">Jakarta</option>
+                    <option value="surabaya">Surabaya</option>
+                    <option value="bandung">Bandung</option>
+                </select>
+                <select id="genreFilter" onchange="filterFilm()">
+                    <option value="">Semua Genre</option>
+                    <option value="action">Action</option>
+                    <option value="drama">Drama</option>
+                    <option value="horror">Horror</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section class="movies-section" id="film">
+        <div class="container">
+            <h2>Film yang Sedang Tayang</h2>
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Film cards will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="promo-section" id="promosi">
+        <div class="container">
+            <h2>Promosi Spesial</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <div class="promo-badge">Diskon</div>
+                    <h3>Tiket Spesial Hari Selasa</h3>
+                    <p>Dapatkan diskon hingga 30%</p>
+                    <span class="promo-code">SELASA30</span>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-badge">Gratis</div>
+                    <h3>Beli 2 Gratis 1 Minuman</h3>
+                    <p>Beli 2 tiket, gratis 1 minuman</p>
+                    <span class="promo-code">GRATIS1</span>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-badge">Bonus</div>
+                    <h3>Member Loyalty Program</h3>
+                    <p>Kumpulkan poin dan tukarkan hadiah</p>
+                    <span class="promo-code">LOYALTY</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang TiketBio</h3>
+                    <p>Platform terpercaya untuk pemesanan tiket bioskop online.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hubungi Kami</h3>
+                    <p>Email: info@tiketbio.com</p>
+                    <p>Telepon: 1800-123-456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TiketBio. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
