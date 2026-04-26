@@ -1,37 +1,33 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>BioskopYuk - Pemesanan Tiket</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="qrcode.min.js"></script>
-</head>
-<body>
+<!-- Header -->
+<header>
   <h1>BioskopYuk 🎬</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Film</a>
+    <a href="#">Pesanan</a>
+    <a href="#">Kontak</a>
+  </nav>
+</header>
 
-  <h2>Data Pemesan</h2>
-  <input type="text" id="nama" placeholder="Nama Anda">
+<!-- Banner -->
+<section class="banner">
+  <h2>Film Terbaru Minggu Ini</h2>
+  <img src="poster.jpg" alt="Poster Film">
+</section>
 
-  <h2>Pilih Film</h2>
-  <select id="film">
-    <option value="Avengers - 19:00">Avengers - 19:00</option>
-    <option value="Batman - 21:00">Batman - 21:00</option>
-    <option value="Spiderman - 17:00">Spiderman - 17:00</option>
-  </select>
-
-  <h2>Pilih Kursi</h2>
-  <div id="kursi">
-    <button onclick="pilihKursi('A1')">A1</button>
-    <button onclick="pilihKursi('A2')">A2</button>
-    <button onclick="pilihKursi('B1')">B1</button>
-    <button onclick="pilihKursi('B2')">B2</button>
+<!-- Daftar Film -->
+<section class="film-list">
+  <div class="film-card">
+    <img src="avengers.jpg" alt="Avengers">
+    <h3>Avengers</h3>
+    <p>Action | 19:00</p>
+    <button>Pesan Tiket</button>
   </div>
+  <div class="film-card">
+    <img src="batman.jpg" alt="Batman">
+    <h3>Batman</h3>
+    <p>Action | 21:00</p>
+    <button>Pesan Tiket</button>
+  </div>
+</section>
 
-  <h2>Detail Pesanan</h2>
-  <p id="detail"></p>
-  <button onclick="buatQR()">Buat QR Code Tiket</button>
-  <div id="qrcode"></div>
-
-  <script src="script.js"></script>
-</body>
-</html>
