@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  color: #f39c12;
+}
+
+#kursi button {
+  margin: 5px;
+  padding: 10px;
+  background: #2ecc71;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#kursi button.taken {
+  background: #e74c3c;
+  cursor: not-allowed;
+}
